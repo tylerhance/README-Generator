@@ -1,5 +1,5 @@
 {
-  "name": "readme-generator",
+  "name": "rm-generator",
   "version": "1.0.0",
   "description": "Allows user to generate a README after following the prompts.",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tylerhance/README-Generator/issues"
   },
-  "homepage": "https://github.com/tylerhance/README-Generator#readme"
+  "homepage": "https://github.com/tylerhance/README-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.0"
+  }
 }
