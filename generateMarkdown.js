@@ -95,20 +95,26 @@ function generateMarkdown(userResponses, userInfo) {
 
 // Questions section
 let draftDeveloper = `
-  
+
+  ---
+
   ## Questions
   
   ![Developer Profile Picture](${userInfo.avatar_url})
   
   For any questions, feel free to contact me directly. GitHub: [@${userInfo.login}](${userInfo.url})`;
 
-  `Email: ${userInfo.email}`;
-  
+
+  if (userInfo.email !== null){
+    draftDeveloper += `
+  }
+  Email: ${userInfo.email}`;
+
 // Includes developer section in markdown
   draftMarkdown += draftDeveloper;
 
   return draftMarkdown;  
 };
-
+}
 // Exports markdown 
 module.exports = generateMarkdown;
