@@ -1,5 +1,5 @@
 {
-  "name": "rm-generator",
+  "name": "static-readme-generator",
   "version": "1.0.0",
   "description": "Allows user to generate a README after following the prompts.",
   "main": "index.js",
