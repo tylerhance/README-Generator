@@ -1,5 +1,5 @@
 
-   # readmeworkPLEASE
+   # tylersReadMe
    
    # Table of Contents
 
@@ -13,30 +13,31 @@
 
    ## Description:
 
-   [![License](https://img.shields.io/badge/License-Apache-blue.svg)]
-   readme generator
+   [![License](https://img.shields.io/badge/License-Apache-blue.svg) "License Badge"]
+
+   description here
 
    ## Installation:
-   run it and follow 
+   install here
 
    ## Usage:
-   use this that
+   use it
 
    ## Contributing: 
    me
 
    ## Test:
-   None
+   No
 
    ## License:
       More information about the license can be found here: 
 
-      - [![License](https://opensource.org/licenses/Apache)]
+      - [License](https://opensource.org/licenses/Apache)
 
    ## Questions: 
       Got questions? Check out my GitHub for more information:
 
-      - [![GitHub Profile](https://github.com/tylerhance)]
+      - [GitHub Profile](https://github.com/tylerhance)
 
       Feel free to reach out for any questions/comments @ tyler.hance@gmail.com.
    
