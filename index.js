@@ -1,85 +1,137 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-const generateMarkdown = require("./generateMarkdown.js");
-const api = require("./api.js")
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const promptUser = () => {
-    return inquirer.prompt([
-        {
-           type: 'input',
-           name: 'title',
-           message: 'What is the title of you repo?', 
-        },
-        {
-           type: 'input',
-           name: 'description',
-           message: 'Write a description of your project: ', 
-        },
-        {
-           type: 'input',
-           name: 'installation',
-           message: 'Briefly describe the installation process: ', 
-        },
-        {
-           type: 'input',
-           name: 'usage',
-           message: 'What is this project usage?', 
-        },
-        {
-           type: 'list',
-           name: 'license',
-           message: 'Choose the license for the project: ',
-           choices: [
-              "Apache",
-              "Academic",
-              "GNU",
-              "ISC",
-              "MIT",
-              "Mozilla",
-              "Open",
-           ] 
-        },
-        {
-           type: 'input',
-           name: 'contributing',
-           message: 'Who are the contributors of this project?', 
-        },
-        {
-           type: 'input',
-           name: 'tests',
-           message: 'Is there a test included?', 
-        },
-        {
-           type: 'input',
-           name: 'questions',
-           message: 'What do I do if I have an issue? ', 
-        },
-        {
-           type: 'input',
-           name: 'username',
-           message: 'Please enter your GitHub username: ', 
-        },
-        {
-           type: 'input',
-           name: 'email',
-           message: 'Please enter your email: ', 
-        },
-       
-    ])
+
+function promptUser() {
+   return inquirer.prompt([
+      {
+         type: 'input',
+         name: 'title',
+         message: 'What is the title of you repo?', 
+      },
+      {
+         type: 'input',
+         name: 'description',
+         message: 'Write a description of your project: ', 
+      },
+      {
+         type: 'input',
+         name: 'installation',
+         message: 'Briefly describe the installation process: ', 
+      },
+      {
+         type: 'input',
+         name: 'usage',
+         message: 'What is this project usage?', 
+      },
+      {
+         type: 'list',
+         name: 'license',
+         message: 'Choose the license for your project: ',
+         choices: [
+            "Apache",
+            "Academic",
+            "GNU",
+            "ISC",
+            "MIT",
+            "Mozilla",
+            "Open",
+         ] 
+      },
+      {
+         type: 'input',
+         name: 'contributing',
+         message: 'Who are the contributors of this project?', 
+      },
+      {
+         type: 'input',
+         name: 'tests',
+         message: 'Is there a test included?', 
+      },
+      {
+         type: 'input',
+         name: 'questions',
+         message: 'What do I do if I have an issue? ', 
+      },
+      {
+         type: 'input',
+         name: 'username',
+         message: 'Please enter your GitHub username: ', 
+      },
+      {
+         type: 'input',
+         name: 'email',
+         message: 'Please enter your email: ', 
+      },
+   ]);
 }
 
-   async function init() {
-      try {
-         const answers = await promptUser();
-         const generateContent = generateMarkdown(answers);
-         
-         await writeFileAsync('./dist/README.md', generateContent);
-         console.log('Success, wrote to README.md');
-      } catch(err) {
-         console.log(err);
-      }
-   }
+// Function for creating the README markdown 
+function generateMarkdown(response) {
+   return `
+   # ${response.title}
+   
+   # Table of Contents
 
-   init();
+   - [Description](#description)
+   - [Installation](#installation)
+   - [Usage](#Usage)
+   - [Contributing](#contributing)
+   - [Test](#test)
+   - [License](#license)
+   - [Questions](#questions)'
+
+   ## Description
+
+   ![License](https://img.shield.io.badge/License-${response.license}-blue.svg "License Badge")
+
+   ${response.description}
+
+   ## Installation
+
+   ${response.installation}
+
+   ## Usage
+
+   ${response.usage}
+
+   ## Contributing 
+
+   ${response.contributing}
+
+   ## Test
+
+   ${response.test}
+
+   ## License:
+      More information about the license can be found here: 
+
+      -[License](https://opensource.org/licenses/${response.license})
+
+   ## Questions 
+      Got questions? Check out my GitHub for more information:
+
+      -[GitHub Profile](https://github.com/${response.username})
+
+      Feel free to reach out for any questions/comments @ ${response.email}.
+   `;
+}
+
+// Function for initializing generator
+async function init() {
+   try {
+      const response = await promptUser();
+
+      const readMe = generateMarkdown(response);
+
+      await writeFileAsync("README.md", readMe);
+      console.log("README Successfully created!");
+   } catch (err) {
+      console.log(err);
+   }
+}
+
+// Calling the async function
+init();

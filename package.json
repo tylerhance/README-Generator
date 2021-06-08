@@ -1,7 +1,7 @@
 {
-  "name": "static-readme-generator",
+  "name": "static-site",
   "version": "1.0.0",
-  "description": "Allows user to generate a README after following the prompts.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tylerhance/README-Generator#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "inquirer": "^8.1.0"
   }
 }
