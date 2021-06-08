@@ -1,5 +1,5 @@
 
-   # myRadReadMeGenerator
+   # readmeworkPLEASE
    
    # Table of Contents
 
@@ -9,39 +9,34 @@
    - [Contributing](#contributing)
    - [Test](#test)
    - [License](#license)
-   - [Questions](#questions)'
+   - [Questions](#questions)
 
-   ## Description
+   ## Description:
 
-   ![License](https://img.shield.io.badge/License-Apache-blue.svg "License Badge")
+   [![License](https://img.shields.io/badge/License-Apache-blue.svg)]
+   readme generator
 
-   Creates a professional README 
+   ## Installation:
+   run it and follow 
 
-   ## Installation
+   ## Usage:
+   use this that
 
-   Follow the prompts/questions to fill in the README fields
+   ## Contributing: 
+   me
 
-   ## Usage
-
-   Using node.js to help simplify creating readme.md
-
-   ## Contributing 
-
-   tyler hance
-
-   ## Test
-
-   undefined
+   ## Test:
+   None
 
    ## License:
       More information about the license can be found here: 
 
-      -[License](https://opensource.org/licenses/Apache)
+      - [![License](https://opensource.org/licenses/Apache)]
 
-   ## Questions 
+   ## Questions: 
       Got questions? Check out my GitHub for more information:
 
-      -[GitHub Profile](https://github.com/tylerhance)
+      - [![GitHub Profile](https://github.com/tylerhance)]
 
       Feel free to reach out for any questions/comments @ tyler.hance@gmail.com.
    

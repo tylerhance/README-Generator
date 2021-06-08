@@ -9,7 +9,7 @@ function promptUser() {
       {
          type: 'input',
          name: 'title',
-         message: 'What is the title of you repo?', 
+         message: 'What is the title of your repo/project?', 
       },
       {
          type: 'input',
@@ -47,13 +47,8 @@ function promptUser() {
       },
       {
          type: 'input',
-         name: 'tests',
+         name: 'test',
          message: 'Is there a test included?', 
-      },
-      {
-         type: 'input',
-         name: 'questions',
-         message: 'What do I do if I have an issue? ', 
       },
       {
          type: 'input',
@@ -81,39 +76,35 @@ function generateMarkdown(response) {
    - [Contributing](#contributing)
    - [Test](#test)
    - [License](#license)
-   - [Questions](#questions)'
+   - [Questions](#questions)
 
-   ## Description
+   ## Description:
 
-   ![License](https://img.shield.io.badge/License-${response.license}-blue.svg "License Badge")
-
+   [![License](https://img.shields.io/badge/License-${response.license}-blue.svg)]
+   
    ${response.description}
 
-   ## Installation
-
+   ## Installation:
    ${response.installation}
 
-   ## Usage
-
+   ## Usage:
    ${response.usage}
 
-   ## Contributing 
-
+   ## Contributing: 
    ${response.contributing}
 
-   ## Test
-
+   ## Test:
    ${response.test}
 
    ## License:
       More information about the license can be found here: 
 
-      -[License](https://opensource.org/licenses/${response.license})
+      - [License](https://opensource.org/licenses/${response.license})
 
-   ## Questions 
+   ## Questions: 
       Got questions? Check out my GitHub for more information:
 
-      -[GitHub Profile](https://github.com/${response.username})
+      - [GitHub Profile](https://github.com/${response.username})
 
       Feel free to reach out for any questions/comments @ ${response.email}.
    `;
