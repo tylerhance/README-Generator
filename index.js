@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 const writeFileAsync = util.promisify(fs.writeFile);
+const generateMarkdown = require("./utils/generateMarkdown");
 
 
 function promptUser() {
@@ -38,6 +39,7 @@ function promptUser() {
             "MIT",
             "Mozilla",
             "Open",
+            "No License"
          ] 
       },
       {
@@ -63,58 +65,11 @@ function promptUser() {
    ]);
 }
 
-// Function for creating the README markdown 
-function generateMarkdown(response) {
-   return `
-   # ${response.title}
-   
-   # Table of Contents
-
-   - [Description](#description)
-   - [Installation](#installation)
-   - [Usage](#Usage)
-   - [Contributing](#contributing)
-   - [Test](#test)
-   - [License](#license)
-   - [Questions](#questions)
-
-   ## Description:
-
-   [![License](https://img.shields.io/badge/License-${response.license}-blue.svg) "License Badge"]
-
-   ${response.description}
-
-   ## Installation:
-   ${response.installation}
-
-   ## Usage:
-   ${response.usage}
-
-   ## Contributing: 
-   ${response.contributing}
-
-   ## Test:
-   ${response.test}
-
-   ## License:
-      More information about the license can be found here: 
-
-      - [License](https://opensource.org/licenses/${response.license})
-
-   ## Questions: 
-      Got questions? Check out my GitHub for more information:
-
-      - [GitHub Profile](https://github.com/${response.username})
-
-      Feel free to reach out for any questions/comments @ ${response.email}.
-   `;
-}
-
 // Function for initializing generator
 async function init() {
    try {
       const response = await promptUser();
-
+      console.log(response);
       const readMe = generateMarkdown(response);
 
       await writeFileAsync("README.md", readMe);
