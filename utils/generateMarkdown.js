@@ -44,25 +44,25 @@ ${renderLicenseBadge(response.license)}
 ${renderLicenseLink(response.license)}
 - [Questions](#questions)
  
-## Description:
+## Description
  
 ${response.description}
  
-## Installation:
+## Installation
 ${response.installation}
  
-## Usage:
+## Usage
 ${response.usage}
  
-## Contributing: 
+## Contributing
 ${response.contributing}
  
-## Test:
+## Test
 ${response.test}
  
 ${renderLicenseSection(response.license)} 
  
-## Questions: 
+## Questions 
 Got questions? Check out my GitHub for more information:
  
 - [GitHub Profile](https://github.com/${response.username})

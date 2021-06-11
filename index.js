@@ -69,7 +69,6 @@ function promptUser() {
 async function init() {
    try {
       const response = await promptUser();
-      console.log(response);
       const readMe = generateMarkdown(response);
 
       await writeFileAsync("README.md", readMe);
