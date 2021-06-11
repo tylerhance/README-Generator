@@ -25,6 +25,7 @@ function renderLicenseSection(license) {
         return `## License
         
 More information about the license can be found here: 
+
 - [License](https://opensource.org/licenses/${license})`;
     }
 }
@@ -38,7 +39,7 @@ ${renderLicenseBadge(response.license)}
  
 - [Description](#description)
 - [Installation](#installation)
-- [Usage](#Usage)
+- [Usage](#usage)
 - [Contributing](#contributing)
 - [Test](#test)
 ${renderLicenseLink(response.license)}
